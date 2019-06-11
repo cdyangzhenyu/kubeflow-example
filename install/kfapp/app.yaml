@@ -1,0 +1,45 @@
+apiVersion: kfdef.apps.kubeflow.org/v1alpha1
+kind: KfDef
+metadata:
+  creationTimestamp: null
+  name: kfapp1
+  namespace: kubeflow
+spec:
+  appdir: /var/kfapp1
+  componentParams:
+    ambassador:
+    - name: ambassadorServiceType
+      value: NodePort
+  components:
+  - ambassador
+  - argo
+  - centraldashboard
+  - jupyter-web-app
+  - katib
+  - metacontroller
+  - notebook-controller
+  - pipeline
+  - pytorch-operator
+  - tensorboard
+  - tf-job-operator
+  packages:
+  - argo
+  - common
+  - examples
+  - gcp
+  - jupyter
+  - katib
+  - metacontroller
+  - modeldb
+  - mpi-job
+  - pipeline
+  - pytorch-job
+  - seldon
+  - tensorboard
+  - tf-serving
+  - tf-training
+  repo: /var/kfapp1/.cache/336eeb6637b38ae474f00657c4e9b9550397e03d/kubeflow
+  useBasicAuth: false
+  useIstio: false
+  version: 336eeb6637b38ae474f00657c4e9b9550397e03d
+status: {}

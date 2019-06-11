@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: arena-installer
+  namespace: kubeflow
+spec:
+  restartPolicy: Never
+  serviceAccountName: pipeline-runner
+  hostNetwork: true
+  containers:
+  - name: arena
+    image: registry.cn-beijing.aliyuncs.com/acs/arena:0.2.0-f6b6188

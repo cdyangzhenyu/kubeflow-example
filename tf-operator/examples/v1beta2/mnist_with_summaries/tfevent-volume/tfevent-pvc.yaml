@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tf-mnist-volume
+  namespace: kubeflow 
+  labels:
+    app: tfjob
+spec:
+  storageClassName: rook-ceph-fs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+
