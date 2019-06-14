@@ -52,14 +52,14 @@ def mnist_pipeline(model_export_dir='/mnt/export',
 
         download = dsl.ContainerOp(
             name="download_data",
-            image="alpine/git",
+            image="aiven86/git",
             command=["git", "clone", "https://github.com/cdyangzhenyu/mnist-data.git", str(output) + "/data"],
         ).apply(onprem.mount_pvc(pvc_name, 'local-storage', output))
         download.after(vop)
 
   train = dsl.ContainerOp(
       name='train',
-      image='gcr.io/kubeflow-examples/mnist/model:v20190304-v0.2-176-g15d997b',
+      image='aiven86/kubeflow-examples_mnist_model:v20190304-v0.2-176-g15d997b',
       arguments=[
           "/opt/model.py",
           "--tf-data-dir", str(output) + "/data",
@@ -83,7 +83,7 @@ def mnist_pipeline(model_export_dir='/mnt/export',
 
   serve = dsl.ContainerOp(
       name='serve',
-      image='gcr.io/ml-pipeline/ml-pipeline-kubeflow-deployer:'
+      image='aiven86/ml-pipeline_ml-pipeline-kubeflow-deployer:'
             '7775692adf28d6f79098e76e839986c9ee55dd61',
       arguments=serve_args
   )
@@ -91,11 +91,11 @@ def mnist_pipeline(model_export_dir='/mnt/export',
 
 
   webui_args = [
-          '--image', 'gcr.io/kubeflow-examples/mnist/web-ui:'
+          '--image', 'aiven86/kubeflow-examples_mnist_web-ui:'
                      'v20190304-v0.2-176-g15d997b-pipelines',
           '--name', 'web-ui',
           '--container-port', '5000',
-          '--service-port', '30080',
+          '--service-port', '80',
           '--service-type', "NodePort"
   ]
   if platform != 'GCP':
@@ -105,7 +105,7 @@ def mnist_pipeline(model_export_dir='/mnt/export',
 
   web_ui = dsl.ContainerOp(
       name='web-ui',
-      image='gcr.io/kubeflow-examples/mnist/deploy-service:latest',
+      image='aiven86/kubeflow-examples_mnist_deploy-service:latest',
       arguments=webui_args
   ).set_image_pull_policy('IfNotPresent')
   web_ui.after(serve)
