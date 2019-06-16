@@ -68,7 +68,7 @@ def taxi_cab_classification(
     
         checkout = dsl.ContainerOp(
             name="checkout",
-            image="alpine/git",
+            image="aiven86/git",
             command=["git", "clone", "https://github.com/kubeflow/pipelines.git", str(output) + "/pipelines"],
         ).apply(onprem.mount_pvc(vop.outputs["name"], 'local-storage', output))
         checkout.after(vop)
