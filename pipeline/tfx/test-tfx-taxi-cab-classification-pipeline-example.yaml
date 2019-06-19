@@ -1,0 +1,92 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    workflows.argoproj.io/completed: "true"
+    workflows.argoproj.io/workflow: tfx-taxi-cab-classification-pipeline-example-5njg7
+  name: tfx-taxi-cab-classification-pipeline-example-5njg7
+  namespace: kubeflow
+spec:
+  containers:
+  - args:
+    command:
+    - tail
+    - -f
+    - /etc/resolv.conf
+    env:
+    - name: GOOGLE_APPLICATION_CREDENTIALS
+      value: /secret/gcp-credentials/user-gcp-sa.json
+    - name: CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE
+      value: /secret/gcp-credentials/user-gcp-sa.json
+    - name: WS_ACCESS_KEY_ID
+      value: minio
+    - name: AWS_SECRET_ACCESS_KEY
+      value: minio123
+    - name: AWS_REGION
+      value: us-west-1
+    - name: S3_ENDPOINT
+      value: minio-service.kubeflow:9000
+    - name: S3_USE_HTTPS
+      value: "0"
+    - name: S3_VERIFY_SSL
+      value: "0"
+    image: aiven86/ml-pipeline_ml-pipeline-dataflow-tfdv_6554e133dd453c62aea05ebb57a04f897c11d070
+    imagePullPolicy: IfNotPresent
+    name: main
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /secret/gcp-credentials
+      name: gcp-credentials
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: pipeline-runner-token-ww9sx
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  nodeName: ngcp
+  priority: 0
+  restartPolicy: Never
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: pipeline-runner
+  serviceAccountName: pipeline-runner
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - downwardAPI:
+      defaultMode: 420
+      items:
+      - fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.annotations
+        path: annotations
+    name: podmetadata
+  - hostPath:
+      path: /var/run/docker.sock
+      type: Socket
+    name: docker-sock
+  - name: gcp-credentials
+    secret:
+      defaultMode: 420
+      secretName: mlpipeline-minio-artifact
+  - name: mlpipeline-minio-artifact
+    secret:
+      defaultMode: 420
+      items:
+      - key: accesskey
+        path: accesskey
+      - key: secretkey
+        path: secretkey
+      secretName: mlpipeline-minio-artifact
+  - name: pipeline-runner-token-ww9sx
+    secret:
+      defaultMode: 420
+      secretName: pipeline-runner-token-ww9sx

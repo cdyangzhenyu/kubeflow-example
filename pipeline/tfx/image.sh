@@ -1,0 +1,16 @@
+docker tag gcr.io/ml-pipeline/ml-pipeline-dataflow-tfdv:6554e133dd453c62aea05ebb57a04f897c11d070 aiven86/ml-pipeline_ml-pipeline-dataflow-tfdv_6554e133dd453c62aea05ebb57a04f897c11d070
+docker tag gcr.io/ml-pipeline/ml-pipeline-dataflow-tfma:6554e133dd453c62aea05ebb57a04f897c11d070 aiven86/ml-pipeline_ml-pipeline-dataflow-tfma_6554e133dd453c62aea05ebb57a04f897c11d070
+docker tag gcr.io/ml-pipeline/ml-pipeline-dataflow-tf-predict:6554e133dd453c62aea05ebb57a04f897c11d070 aiven86/ml-pipeline_ml-pipeline-dataflow-tf-predict_6554e133dd453c62aea05ebb57a04f897c11d070
+docker tag gcr.io/ml-pipeline/ml-pipeline-dataflow-tft:6554e133dd453c62aea05ebb57a04f897c11d070 aiven86/ml-pipeline_ml-pipeline-dataflow-tft_6554e133dd453c62aea05ebb57a04f897c11d070
+docker tag gcr.io/ml-pipeline/ml-pipeline-kubeflow-deployer:6554e133dd453c62aea05ebb57a04f897c11d070 aiven86/ml-pipeline_ml-pipeline-kubeflow-deployer_6554e133dd453c62aea05ebb57a04f897c11d070
+docker tag gcr.io/ml-pipeline/ml-pipeline-kubeflow-tf-trainer:6554e133dd453c62aea05ebb57a04f897c11d070 aiven86/ml-pipeline_ml-pipeline-kubeflow-tf-trainer_6554e133dd453c62aea05ebb57a04f897c11d070
+docker tag gcr.io/ml-pipeline/ml-pipeline-local-confusion-matrix:6554e133dd453c62aea05ebb57a04f897c11d070 aiven86/ml-pipeline_ml-pipeline-local-confusion-matrix_6554e133dd453c62aea05ebb57a04f897c11d070
+
+docker push aiven86/ml-pipeline_ml-pipeline-dataflow-tfdv_6554e133dd453c62aea05ebb57a04f897c11d070 
+docker push aiven86/ml-pipeline_ml-pipeline-dataflow-tfma_6554e133dd453c62aea05ebb57a04f897c11d070 
+docker push aiven86/ml-pipeline_ml-pipeline-dataflow-tf-predict_6554e133dd453c62aea05ebb57a04f897c11d070 
+docker push aiven86/ml-pipeline_ml-pipeline-dataflow-tft_6554e133dd453c62aea05ebb57a04f897c11d070 
+docker push aiven86/ml-pipeline_ml-pipeline-kubeflow-deployer_6554e133dd453c62aea05ebb57a04f897c11d070 
+docker push aiven86/ml-pipeline_ml-pipeline-kubeflow-tf-trainer_6554e133dd453c62aea05ebb57a04f897c11d070 
+docker push aiven86/ml-pipeline_ml-pipeline-local-confusion-matrix_6554e133dd453c62aea05ebb57a04f897c11d070 
+
