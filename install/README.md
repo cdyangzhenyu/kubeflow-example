@@ -1,1 +1,0 @@
-kfctl apply all -V
