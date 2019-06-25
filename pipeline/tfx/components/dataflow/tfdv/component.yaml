@@ -18,7 +18,8 @@ outputs:
 - {name: Validation result, type: String,                       description: Indicates whether anomalies were detected or not.}
 implementation:
   container:
-    image: aiven86/ml-pipeline_ml-pipeline-dataflow-tfdv_6554e133dd453c62aea05ebb57a04f897c11d070
+    #image: aiven86/ml-pipeline_ml-pipeline-dataflow-tfdv_6554e133dd453c62aea05ebb57a04f897c11d070
+    image: aiven86/kubeflow-tf-pipeline:1.13.1
     command: [python2, /ml/validate.py]
     args: [
       --csv-data-for-inference, {inputValue: Inference data},
