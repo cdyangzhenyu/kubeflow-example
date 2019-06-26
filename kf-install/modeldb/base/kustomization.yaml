@@ -1,5 +1,4 @@
-namePrefix: modeldb-
-
+namespace: kubeflow
 resources:
 - artifact-store-deployment.yaml
 - artifact-store-service.yaml

@@ -14,7 +14,7 @@ commonLabels:
 images:
 - name: gcr.io/kubeflow-images-public/tf_operator
   newName: aiven86/kubeflow-images-public_tf_operator
-  newTag: 'v0.5.0'
+  newTag: 'v0.5.3'
 configMapGenerator:
 - name: parameters
   env: params.env

@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
             - name: tensorflow
-              image: kubeflow/tf-mnist-with-summaries:1.0
+              image: kubeflow/tf-mnist-with-summaries:cpu
               command:
                 - "python"
                 - "/var/tf_mnist/mnist_with_summaries.py"

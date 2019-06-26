@@ -11,4 +11,4 @@ spec:
   selector:
     app: modeldb
     tier: webapp
-  type: LoadBalancer
+  type: NodePort

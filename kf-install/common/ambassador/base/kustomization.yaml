@@ -1,5 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: kubeflow
 resources:
 - cluster-role-binding.yaml
 - cluster-role.yaml
@@ -10,7 +11,7 @@ commonLabels:
   kustomize.component: ambassador
 images:
   - name: quay.io/datawire/ambassador
-    newName: quay.io/datawire/ambassador
+    newName: aiven86/datawire_ambassador
     newTag: 0.37.0
 configMapGenerator:
 - name: ambassador-parameters

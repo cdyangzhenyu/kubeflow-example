@@ -14,4 +14,3 @@ data:
 kind: ConfigMap
 metadata:
   name: modeldb-artifact-store-config
-type: Opaque

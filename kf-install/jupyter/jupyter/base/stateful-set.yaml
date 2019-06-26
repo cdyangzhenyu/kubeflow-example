@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: jupyter
+        k8s-app: jupyter
     spec:
       containers:
       - command:

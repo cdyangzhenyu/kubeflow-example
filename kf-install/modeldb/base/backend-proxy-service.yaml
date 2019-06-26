@@ -11,4 +11,4 @@ spec:
   selector:
     app: modeldb
     tier: backend-proxy
-  type: LoadBalancer
+  type: NodePort

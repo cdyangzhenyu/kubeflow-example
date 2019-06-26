@@ -13,7 +13,7 @@ spec:
             - name: tensorflow
               image: kubeflow/tf-dist-mnist-test:1.0
     Worker:
-      replicas: 2
+      replicas: 4
       restartPolicy: Never
       template:
         spec:

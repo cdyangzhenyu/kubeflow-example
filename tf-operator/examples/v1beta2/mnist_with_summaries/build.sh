@@ -1,2 +1,2 @@
 cp -r ../../../../data/mnist/ input_data
-docker build -f Dockerfile -t kubeflow/tf-mnist-with-summaries:1.0 ./
+docker build -f Dockerfile -t kubeflow/tf-mnist-with-summaries:cpu ./

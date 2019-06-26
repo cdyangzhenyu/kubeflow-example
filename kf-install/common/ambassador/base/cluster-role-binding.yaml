@@ -8,4 +8,5 @@ roleRef:
   name: ambassador
 subjects:
 - kind: ServiceAccount
+  namespace: kubeflow
   name: ambassador
