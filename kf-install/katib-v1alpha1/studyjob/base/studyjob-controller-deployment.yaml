@@ -18,7 +18,7 @@ spec:
       containers:
       - name: studyjob-controller
         image: gcr.io/kubeflow-images-public/katib/studyjob-controller:v0.1.2-alpha-156-g4ab3dbd
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 443
           name: validating

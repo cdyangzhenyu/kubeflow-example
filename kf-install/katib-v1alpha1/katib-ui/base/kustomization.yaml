@@ -10,6 +10,7 @@ generatorOptions:
   disableNameSuffixHash: true
 images:
   - name: gcr.io/kubeflow-images-public/katib/katib-ui
+    newName: aiven86/kubeflow-images-public_katib_katib-ui
     newTag: v0.1.2-alpha-157-g3d4cd04
 vars:
 - name: clusterDomain

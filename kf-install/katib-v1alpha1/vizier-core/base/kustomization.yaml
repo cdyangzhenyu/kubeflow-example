@@ -9,6 +9,8 @@ generatorOptions:
   disableNameSuffixHash: true
 images:
   - name: gcr.io/kubeflow-images-public/katib/vizier-core
+    newName: aiven86/kubeflow-images-public_katib_vizier-core
     newTag: v0.1.2-alpha-157-g3d4cd04
   - name: gcr.io/kubeflow-images-public/katib/vizier-core-rest
+    newName: aiven86/kubeflow-images-public_katib_vizier-core-rest
     newTag: v0.1.2-alpha-157-g3d4cd04
