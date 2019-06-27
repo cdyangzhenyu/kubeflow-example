@@ -7,4 +7,4 @@ generatorOptions:
 images:
   - name: gcr.io/kubeflow-images-public/katib/metrics-collector
     newName: aiven86/kubeflow-images-public_katib_metrics-collector
-    newTag: v0.1.2-alpha-157-g3d4cd04
+    newTag: v0.1.2-alpha-156-g4ab3dbd

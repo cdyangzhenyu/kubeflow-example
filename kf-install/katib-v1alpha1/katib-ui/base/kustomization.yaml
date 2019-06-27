@@ -11,7 +11,7 @@ generatorOptions:
 images:
   - name: gcr.io/kubeflow-images-public/katib/katib-ui
     newName: aiven86/kubeflow-images-public_katib_katib-ui
-    newTag: v0.1.2-alpha-157-g3d4cd04
+    newTag: v0.1.2-alpha-156-g4ab3dbd
 vars:
 - name: clusterDomain
   objref:

@@ -4,6 +4,8 @@ kubectl create namespace kubeflow
 ./kustomize build argo/base/ | kubectl apply -f -
 ./kustomize build common/centraldashboard/base/ | kubectl apply -f -
 ./kustomize build common/ambassador/base/ | kubectl apply -f -
+
+./kustomize build jupyter/jupyter/base/ | kubectl apply -f -
 ./kustomize build jupyter/jupyter-web-app/base/ | kubectl apply -f -
 ./kustomize build jupyter/notebook-controller/base/ | kubectl apply -f -
 
