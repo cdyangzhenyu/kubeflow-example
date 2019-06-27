@@ -18,7 +18,6 @@ set -x
 
 KUBERNETES_NAMESPACE="${KUBERNETES_NAMESPACE:-kubeflow}"
 SERVER_NAME="${SERVER_NAME:-model-server}"
-
 while (($#)); do
    case $1 in
      "--model-export-path")
@@ -88,7 +87,7 @@ git checkout ${KUBEFLOW_VERSION}
 
 cd /opt
 echo "Initializing KSonnet app..."
-ks init tf-serving-app
+ks init tf-serving-app  --api-spec=file:swagger.json
 cd tf-serving-app/
 
 if [ -n "${KUBERNETES_NAMESPACE}" ]; then
