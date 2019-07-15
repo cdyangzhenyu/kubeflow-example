@@ -11,7 +11,7 @@ commonLabels:
 namePrefix: admission-webhook-bootstrap- 
 images:
   - name: gcr.io/kubeflow-images-public/ingress-setup
-    newName: gcr.io/kubeflow-images-public/ingress-setup
+    newName: aiven86/kubeflow-images-public_ingress-setup
     newTag: latest
 generatorOptions:
   disableNameSuffixHash: true
